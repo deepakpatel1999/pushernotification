@@ -111,15 +111,15 @@
                     @else
                         <li class="nav-item dropdown">
 
-                            {{-- <a class="dropdown-item" href="{{ route('logout') }}"
+                            <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-																 document.g etElementById('logout-form').submit();">
+																 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
-                            </form> --}}
+                            </form>
                             {{-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> --}}
                             <div>
                                 {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -172,7 +172,7 @@
         channel.bind('App\\Events\\PostCreated', function(data) {
 
             console.log(data);
-            //  alert(data.username.title);
+              alert(data.username.title);
 
             document.getElementById("add_to_me").innerHTML +=
                 "<h3>" + data.username.title + "</h3>";

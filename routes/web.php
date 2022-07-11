@@ -21,9 +21,9 @@ Route::get('/', function () {
 //     event(new App\Events\PostCreated('Someone'));
 //     return "Event has been sent!";
 // });
-Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('post');
-Route::post('/post', [App\Http\Controllers\PostController::class, 'createPost'])->name('create-post');
+// Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('post');
+// Route::post('/post', [App\Http\Controllers\PostController::class, 'createPost'])->name('create-post');
 
-// Auth::routes();
-// Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('post')->middleware('auth');
-// Route::post('/post', [App\Http\Controllers\PostController::class, 'createPost'])->name('create-post')->middleware('auth');
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('post')->middleware('auth');
+Route::post('/post', [App\Http\Controllers\PostController::class, 'createPost'])->name('create-post')->middleware('auth');
